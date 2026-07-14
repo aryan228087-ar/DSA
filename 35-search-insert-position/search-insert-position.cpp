@@ -5,7 +5,7 @@ public:
         if(target > arr[n-1]) return n;
         int lo = 0;
         int hi = n-1;
-        int idx = 0;
+        int idx = -1;
         while(lo <= hi){
             int mid = lo + (hi-lo)/2;
             if(target == arr[mid]){
