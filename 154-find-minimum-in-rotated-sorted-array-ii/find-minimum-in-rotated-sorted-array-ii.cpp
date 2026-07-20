@@ -4,8 +4,7 @@ public:
         int n = arr.size();
         int lo = 0;
         int hi = n-1;
-        if (arr[0] < arr[n - 1])
-            return arr[0];
+        if (arr[0] < arr[n - 1]) return arr[0];
         while(lo <= hi){
             int mid = lo+(hi-lo)/2;
 
