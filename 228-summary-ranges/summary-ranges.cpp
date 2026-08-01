@@ -9,7 +9,7 @@ public:
                 i++;
             }
             int end = arr[i];
-            if(start == end) ans.push_back(to_string(start));
+            if(start == end) ans.push_back(to_string(arr[i]));
             else ans.push_back(to_string(start) + "->" + to_string(end));
         }
         return ans;
