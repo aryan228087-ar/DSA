@@ -5,7 +5,8 @@ public:
         int maxr = n-1;
         int minc = 0;
         int maxc = n-1;
-        vector<vector<int>> ans(n, vector<int>(n));
+        vector<int> row(n);
+        vector<vector<int>> ans(n,row);
         int num = 1;
         while(minr <= maxr && minc <= maxc){
             //Right
