@@ -2,14 +2,14 @@ class Solution {
 public:
     int hIndex(vector<int>& arr) {
         int n = arr.size();
-        sort(arr.begin(),arr.end(),greater<int>()); //sorting in descending order
-        int h = 0;
-        for(int i=0;i<n;i++){
-            if(arr[i] >= i+1){
-                h = i+1;
-            }
-            else break;
+        int lo = 0;
+        int hi = n-1;
+        while(lo <= hi){
+            int mid = lo + (hi-lo)/2;
+            if(arr[mid] == n-mid) return n-mid;
+            else if(arr[mid] < n-mid) lo = mid+1;
+            else hi = mid-1;
         }
-        return h;
+        return n-lo;
     }
 };
