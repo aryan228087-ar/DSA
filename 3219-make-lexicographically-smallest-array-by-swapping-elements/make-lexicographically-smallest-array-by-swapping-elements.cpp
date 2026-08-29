@@ -10,6 +10,7 @@ public:
         int i = 0;
         while(i < n){
             int j = i;
+            //first group formation until the limit >=(therefore j will be moving)
             while(j+1<n && a[j+1].first - a[j].first <= limit){
                 j++;
             }
@@ -19,12 +20,12 @@ public:
                 values.push_back(a[k].first);
                 indices.push_back(a[k].second);
             }
-            sort(indices.begin(),indices.end());
+            sort(indices.begin(),indices.end()); //indices of a particular grp gets sorted 
             //put the smallest values at smallest indices
             for(int k=0;k<values.size();k++){
                 arr[indices[k]] = values[k];
             }
-            i=j+1;
+            i=j+1; //giong for the another group
         }
         return arr;
     }
