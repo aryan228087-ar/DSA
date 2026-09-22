@@ -6,8 +6,8 @@ public:
         string row1 = "qwertyuiop";
         string row2 = "asdfghjkl";
         string row3 = "zxcvbnm";
-        
-        //putting characters 
+
+        //Assigning each characters a row
         for(char ch : row1){
             mp[ch] = 1;
         }
