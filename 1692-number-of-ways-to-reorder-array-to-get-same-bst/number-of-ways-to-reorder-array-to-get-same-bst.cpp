@@ -5,7 +5,7 @@ public:
     long long solve(vector<int>& nums) {
         int n = nums.size();
 
-        if(n <= 1)
+        if(n <= 2)
             return 1;
 
         vector<int> left, right;
