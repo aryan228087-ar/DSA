@@ -4,19 +4,31 @@ public:
         int n = arr.size();
         sort(arr.begin(),arr.end());
         vector<vector<int>> ans;
-        int start = arr[0][0];
-        int end = arr[0][1];
+        ans.push_back(arr[0]);
         for(int i=1;i<n;i++){
-            if(arr[i][0] <= end){
-                end = max(end,arr[i][1]);
+            if(ans.back()[1] < arr[i][0]){
+                ans.push_back(arr[i]);
             }
             else{
-                ans.push_back({start,end});
-                start = arr[i][0];
-                end = arr[i][1];
+                ans.back()[1] = max(ans.back()[1],arr[i][1]);
             }
         }
-        ans.push_back({start,end});
         return ans;
     }
 };
+
+
+// int start = arr[0][0];
+//         int end = arr[0][1];
+//         for(int i=1;i<n;i++){
+//             if(arr[i][0] <= end){
+//                 end = max(end,arr[i][1]);
+//             }
+//             else{
+//                 ans.push_back({start,end});
+//                 start = arr[i][0];
+//                 end = arr[i][1];
+//             }
+//         }
+//         ans.push_back({start,end});
+//         return ans;
