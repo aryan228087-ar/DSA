@@ -13,7 +13,7 @@ public:
                     count++;
                     hi++;
                 }
-                if(hi < n && arr[lo] != arr[hi]){
+                if(hi < n && arr[hi] != arr[lo]){
                     maxcount = max(count,maxcount);
                 }
             }
