@@ -17,6 +17,10 @@ public:
         while(hi != NULL){
             if(lo->val == hi->val){
                 hi = hi->next;
+                if(hi == NULL){
+                    lo->next = NULL;
+                    return head;
+                }
             }
             else{
                 lo->next = hi;
@@ -24,7 +28,7 @@ public:
                 hi = lo->next;
             }
         }
-        lo->next = NULL;
+        //lo->next = NULL; //cuts the duplicate node from end
         return head;
     }
 };
