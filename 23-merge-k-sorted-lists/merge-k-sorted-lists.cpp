@@ -33,17 +33,29 @@ public:
         return c;
     }
     ListNode* mergeKLists(vector<ListNode*>& arr) {
-        // Method 1:Merging last  2 ele of arr and then pushback to last (IN REPEAT)
-        
+        //Method 2: Taking two starting index merge them and then push in back of array
         if(arr.size() == 0) return NULL;
         while(arr.size() > 1){
-            ListNode* a = arr[arr.size()-1];
-            arr.pop_back();
-            ListNode* b = arr[arr.size()-1];
-            arr.pop_back();
+            ListNode* a = arr[0];
+            arr.erase(arr.begin());
+            ListNode* b = arr[0];
+            arr.erase(arr.begin());
             ListNode* c = merge(a,b);
             arr.push_back(c);
         }
         return arr[0];
     }
 };
+
+// Method 1:Merging last  2 ele of arr and then pushback to last (IN REPEAT)
+        
+        // if(arr.size() == 0) return NULL;
+        // while(arr.size() > 1){
+        //     ListNode* a = arr[arr.size()-1];
+        //     arr.pop_back();
+        //     ListNode* b = arr[arr.size()-1];
+        //     arr.pop_back();
+        //     ListNode* c = merge(a,b);
+        //     arr.push_back(c);
+        // }
+        // return arr[0];
