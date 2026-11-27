@@ -43,9 +43,10 @@ public:
         ListNode* a = head;
         ListNode* b = slow->next;
         slow->next = NULL;
+        
         a = sortList(a);
         b = sortList(b);
-        ListNode* c = merge(a,b);
-        return c;
+
+        return merge(a,b);
     }
 };
