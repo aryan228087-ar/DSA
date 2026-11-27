@@ -42,10 +42,10 @@ public:
         }
         if(a != NULL) a->next = NULL;
         c->next = NULL;
-        c = reverseList(b);
+        ListNode* k = reverseList(b);
         if(a) a->next = c;
         b->next = d;
         if(a) return head;
-        return c;
+        return k;
     }
 };
