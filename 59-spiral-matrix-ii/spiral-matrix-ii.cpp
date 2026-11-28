@@ -2,33 +2,29 @@ class Solution {
 public:
     vector<vector<int>> generateMatrix(int n) {
         int minr = 0;
-        int maxr = n-1;
         int minc = 0;
+        int maxr = n-1;
         int maxc = n-1;
-        vector<int> row(n);
-        vector<vector<int>> ans(n,row);
         int num = 1;
+        vector<vector<int>> ans(n,vector<int>(n));
         while(minr <= maxr && minc <= maxc){
             //Right
-            for(int i=minc;i<=maxc;i++){
-                ans[minr][i] = num++;
+            for(int j=minc;j<=maxc;j++){
+                ans[minr][j] = num++;
             }
             minr++;
-
             //Down
             for(int i=minr;i<=maxr;i++){
                 ans[i][maxc] = num++;
             }
             maxc--;
-
             if(minr <= maxr && minc <= maxc){
                 //Left
-                for(int i=maxc;i>=minc;i--){
-                    ans[maxr][i] = num++;
+                for(int j=maxc;j>=minc;j--){
+                    ans[maxr][j] = num++;
                 }
                 maxr--;
-
-                //Up
+                //UP
                 for(int i=maxr;i>=minr;i--){
                     ans[i][minc] = num++;
                 }
@@ -36,16 +32,5 @@ public:
             }
         }
         return ans;
-
     }
 };
-
-//         int m = matrix.size(); //rows
-//         int n = matrix[0].size(); //cols
-//         
-//         for(int i=minr;i<=maxr;i++){
-//             vector<int> row;
-//             while(minc <= maxc){
-//                 row.push_back()
-//             }
-//         }
